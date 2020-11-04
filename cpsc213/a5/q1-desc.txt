@@ -1,0 +1,16 @@
+	The number of reads is 8 because in the C file, when the 
+first line of void() runs, memory is read 4 times. Once to read a
+because it's a pointer, then to read x which is also a pointer,
+i is then read, and then x[i] is read.
+	In the second line of void(), memory is read once for y[i]. 
+b does not need to be read because it is statically allocated
+when a is created.
+	The third line of void() has 3 reads: once to read b.a 
+because a is a pointer in struct b, once to find a->x, and
+lastly to determine x[i].
+	The last two lines do not require reading memory because we
+have already previously accessed them.
+
+The number of writes equals the number of store instructions 
+which corresponds to lines 13, 24, 36,
+42, and 54 in the assembly code.

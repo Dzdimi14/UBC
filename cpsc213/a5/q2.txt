@@ -1,0 +1,2 @@
+In pop() we free e before returning a pointer to e->name, therefore after we free e e->name is pointing to 
+some random value that is stored int he place were e used to be (dangling pointer).
