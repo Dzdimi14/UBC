@@ -1,0 +1,12 @@
+time ./tRead 10
+time: 0.044s
+
+time ./tRead 100
+time: 0.053s
+
+time ./tRead 1000
+time: 0.148s
+
+
+tRead is substantially faster than s read but slightly slower than aRead. This is because while it is still working in parallel it
+probably requires a little bit extra work to initialize all the new threads for each block making it slightly slower than aRead. 

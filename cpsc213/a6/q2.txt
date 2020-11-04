@@ -1,0 +1,12 @@
+- statically allocates s, i and a
+- load -10, to check if i - 10 = 0
+- if i-10 != 0, s += a[i], i++
+- basically s = sum of all of a values
+
+S5a loop unrolled
+- each step of the loop manually written out
+- i is not statically allocated
+
+S6 if
+- set b to negative to compare if a-b > 0
+- if it is, branch to then, else continue to else then branch to end

@@ -1,0 +1,29 @@
+
+time ./sRead 10
+minimum time of 3 trials: 0.132 seconds
+
+time ./aRead 10
+minimum time of 3 trials: 0.039 seconds
+
+
+time ./sRead 100
+minimum time of 3 trials: 1.095 seconds
+
+time ./aRead 100
+minimum time of 3 trials: 0.045 seconds
+
+
+time ./sRead 1000
+minimum time of 3 trials: 10.702 seconds
+
+time ./aRead 1000
+minimum time of 3 trials: 0.048 seconds
+
+
+aRead is substantially faster than sRead in all three cases,
+especially when reading a large number of blocks, while sRead
+is linearly growing aRead consistently takes around 0.05 seconds
+to run regardless of block size. This is because aRead is reading
+the blocks in parallel rather than one after the other like sRead.
+which means that it does not need to wait for one block to finish
+reading before it starts the next one.

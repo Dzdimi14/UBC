@@ -1,0 +1,12 @@
+./sRead 10
+0.136 seconds
+
+./sRead 100
+1.082 seconds
+
+./sRead 1000
+10.524 seconds
+
+I timed each excecution using the time command in UNIX, it seems like the time read is linear to the
+number of blocks being read with every 100 blocks taking about one second to read. This is because after each read get schecduled
+it waits for the next to be completed doing each one one after another.
